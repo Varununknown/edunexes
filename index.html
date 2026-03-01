@@ -6,8 +6,9 @@
 <title>EduNexes — AI-Powered School Management Platform</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
 html { scroll-behavior: smooth; font-size: 16px; }
+body { transition: background 0.3s ease; }
 
 :root {
   --ink: #0a0f1e;
@@ -118,7 +119,7 @@ nav.scrolled {
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 550;
-  transition: all 0.25s;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 .nav-links a::after {
@@ -129,7 +130,7 @@ nav.scrolled {
   width: 0;
   height: 2px;
   background: var(--blue);
-  transition: width 0.25s;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 1px;
 }
 .nav-links a:hover { 
@@ -150,16 +151,17 @@ nav.scrolled {
   cursor: pointer;
   text-decoration: none;
   font-family: inherit;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   letter-spacing: -0.15px;
 }
 .btn-outline:hover { 
   border-color: var(--blue); 
   color: var(--blue); 
   background: var(--blue-pale);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(27,79,216,0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(27,79,216,0.18);
 }
+.btn-outline:active { transform: translateY(0); }
 .btn-primary {
   background: linear-gradient(135deg, var(--blue) 0%, #2563EB 100%);
   color: white;
@@ -171,15 +173,16 @@ nav.scrolled {
   text-decoration: none;
   font-family: inherit;
   border: none;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: var(--shadow-blue-soft);
   letter-spacing: -0.15px;
 }
 .btn-primary:hover { 
   background: linear-gradient(135deg, #2563EB 0%, #1d47be 100%);
-  transform: translateY(-2px); 
+  transform: translateY(-3px); 
   box-shadow: var(--shadow-blue);
 }
+.btn-primary:active { transform: translateY(-1px); }
 
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
 .hamburger span { width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: all 0.3s; display: block; }
@@ -507,10 +510,10 @@ h2 em { font-style: normal; font-family: 'Outfit', -apple-system, BlinkMacSystem
 .trust-logo-item {
   font-size: 0.85rem; font-weight: 700; color: var(--ink);
   letter-spacing: 1px; text-transform: uppercase;
-  transition: color 0.2s;
+  transition: color 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   flex-shrink: 0;
 }
-.trust-logo-item:hover { color: var(--blue); }
+.trust-logo-item:hover { color: var(--blue); transform: scale(1.05); }
 
 /* ── FEATURES ── */
 .features-bg { background: linear-gradient(135deg, #fafbfe 0%, #f5f7fc 100%); }
@@ -522,7 +525,7 @@ h2 em { font-style: normal; font-family: 'Outfit', -apple-system, BlinkMacSystem
   border-radius: 10px;
   padding: 14px;
   border: 1px solid rgba(226,232,240,0.8);
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
@@ -532,11 +535,11 @@ h2 em { font-style: normal; font-family: 'Outfit', -apple-system, BlinkMacSystem
   position:absolute; top:0; left:0; right:0; height:2px;
   background: var(--card-accent, var(--blue));
   transform: scaleX(0); transform-origin: left;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .feature-card:hover { 
   box-shadow: var(--shadow-lg);
-  transform: translateY(-4px); 
+  transform: translateY(-6px); 
   border-color: rgba(27,79,216,0.2);
 }
 .feature-card:hover::before { transform: scaleX(1); }
@@ -560,11 +563,11 @@ h2 em { font-style: normal; font-family: 'Outfit', -apple-system, BlinkMacSystem
   display: flex; gap: 12px; align-items: flex-start;
   padding: 14px; border-radius: 10px;
   background: white; border: 1px solid rgba(226,232,240,0.8);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
   cursor: default;
   box-shadow: 0 2px 6px rgba(0,0,0,0.03);
 }
-.prem-item:hover { box-shadow: var(--shadow-md); border-color: rgba(27,79,216,0.15); transform: translateY(-2px); }
+.prem-item:hover { box-shadow: var(--shadow-md); border-color: rgba(27,79,216,0.15); transform: translateY(-4px); }
 .prem-icon-wrap {
   width: 38px; height: 38px; border-radius: 8px;
   flex-shrink: 0;
@@ -636,13 +639,13 @@ h2 em { font-style: normal; font-family: 'Outfit', -apple-system, BlinkMacSystem
   border-radius: 18px;
   border: 1.5px solid rgba(226,232,240,0.8);
   overflow: hidden;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   display: flex; flex-direction: column;
   position: relative;
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
 .package-card:hover { 
-  transform: translateY(-8px); 
+  transform: translateY(-12px); 
   box-shadow: var(--shadow-lg);
   border-color: rgba(226,232,240,0.95);
 }
@@ -683,7 +686,7 @@ h2 em { font-style: normal; font-family: 'Outfit', -apple-system, BlinkMacSystem
   border-radius: 12px; font-weight: 750; font-size: 0.92rem;
   cursor: pointer; border: none; font-family: inherit;
   text-decoration: none; display: block; text-align: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
   letter-spacing: -0.15px;
 }
 .pkg-btn.secondary {
@@ -695,8 +698,8 @@ h2 em { font-style: normal; font-family: 'Outfit', -apple-system, BlinkMacSystem
 .pkg-btn.secondary:hover { 
   background: var(--blue-pale); 
   border-color: var(--blue);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(27,79,216,0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(27,79,216,0.18);
 }
 .pkg-btn.primary-btn {
   background: linear-gradient(135deg, var(--blue) 0%, #2563EB 100%);
@@ -705,7 +708,7 @@ h2 em { font-style: normal; font-family: 'Outfit', -apple-system, BlinkMacSystem
 }
 .pkg-btn.primary-btn:hover { 
   background: linear-gradient(135deg, #2563EB 0%, #1d47be 100%);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-blue);
 }
 .pkg-btn.gold-btn {
@@ -714,8 +717,8 @@ h2 em { font-style: normal; font-family: 'Outfit', -apple-system, BlinkMacSystem
   box-shadow: 0 6px 20px rgba(217,119,6,0.2);
 }
 .pkg-btn.gold-btn:hover { 
-  transform: translateY(-2px); 
-  box-shadow: 0 10px 32px rgba(217,119,6,0.3);
+  transform: translateY(-3px); 
+  box-shadow: 0 12px 36px rgba(217,119,6,0.35);
 }
 
 /* Free offer banner */
@@ -740,10 +743,10 @@ h2 em { font-style: normal; font-family: 'Outfit', -apple-system, BlinkMacSystem
 .free-banner-text .title { font-size: 1.2rem; font-weight: 850; color: white; margin-bottom: 8px; font-family: 'Instrument Serif', serif; letter-spacing: -0.3px; }
 .free-banner-text .desc { font-size: 0.75rem; color: rgba(255,255,255,0.8); max-width: 500px; line-height: 1.5; font-weight: 450; }
 .free-banner-actions { display: flex; gap: 14px; flex-shrink: 0; position: relative; z-index: 1; }
-.btn-white { background: white; color: var(--blue); padding: 14px 32px; border-radius: 12px; font-weight: 750; font-size: 0.92rem; text-decoration: none; font-family: inherit; border: none; cursor: pointer; transition: all 0.3s; box-shadow: 0 8px 24px rgba(0,0,0,0.15); letter-spacing: -0.15px; }
-.btn-white:hover { background: #f0f7ff; transform: translateY(-2px); box-shadow: 0 12px 36px rgba(0,0,0,0.2); }
-.btn-white-outline { background: rgba(255,255,255,0.15); color: white; padding: 14px 28px; border-radius: 12px; font-weight: 700; font-size: 0.92rem; text-decoration: none; font-family: inherit; border: 1.5px solid rgba(255,255,255,0.35); cursor: pointer; transition: all 0.3s; backdrop-filter: blur(8px); letter-spacing: -0.15px; }
-.btn-white-outline:hover { background: rgba(255,255,255,0.25); border-color: white; transform: translateY(-2px); }
+.btn-white { background: white; color: var(--blue); padding: 14px 32px; border-radius: 12px; font-weight: 750; font-size: 0.92rem; text-decoration: none; font-family: inherit; border: none; cursor: pointer; transition: all 0.38s cubic-bezier(0.34, 1.56, 0.64, 1); box-shadow: 0 8px 24px rgba(0,0,0,0.15); letter-spacing: -0.15px; }
+.btn-white:hover { background: #f0f7ff; transform: translateY(-3px); box-shadow: 0 14px 40px rgba(0,0,0,0.22); }
+.btn-white-outline { background: rgba(255,255,255,0.15); color: white; padding: 14px 28px; border-radius: 12px; font-weight: 700; font-size: 0.92rem; text-decoration: none; font-family: inherit; border: 1.5px solid rgba(255,255,255,0.35); cursor: pointer; transition: all 0.38s cubic-bezier(0.34, 1.56, 0.64, 1); backdrop-filter: blur(8px); letter-spacing: -0.15px; }
+.btn-white-outline:hover { background: rgba(255,255,255,0.25); border-color: white; transform: translateY(-3px); }
 
 /* ── HOW IT WORKS ── */
 .steps-grid {
@@ -764,14 +767,14 @@ h2 em { font-style: normal; font-family: 'Outfit', -apple-system, BlinkMacSystem
   margin: 0 auto 24px;
   font-size: 1.5rem;
   position: relative; z-index: 1;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow: 0 4px 16px rgba(0,0,0,0.06);
 }
 .step-item:hover .step-num { 
   border-color: var(--blue);
   background: var(--blue-pale);
-  transform: scale(1.08);
-  box-shadow: 0 8px 28px rgba(27,79,216,0.15);
+  transform: scale(1.12);
+  box-shadow: 0 12px 36px rgba(27,79,216,0.2);
 }
 .step-title { font-weight: 750; font-size: 0.98rem; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.1px; }
 .step-desc { font-size: 0.82rem; color: var(--text-mid); line-height: 1.68; font-weight: 450; }
@@ -787,13 +790,13 @@ h2 em { font-style: normal; font-family: 'Outfit', -apple-system, BlinkMacSystem
   border: 1.5px solid rgba(255,255,255,0.12);
   border-radius: 12px;
   padding: 18px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
   backdrop-filter: blur(12px);
 }
 .testi-card:hover { 
   background: rgba(255,255,255,0.12); 
   border-color: rgba(255,255,255,0.2);
-  transform: translateY(-3px);
+  transform: translateY(-5px);
 }
 .stars { color: var(--gold); font-size: 0.75rem; margin-bottom: 10px; letter-spacing: 1.5px; font-weight: 600; }
 .testi-text { font-size: 0.75rem; color: rgba(255,255,255,0.8); line-height: 1.5; margin-bottom: 12px; font-style: italic; font-weight: 450; }
@@ -821,10 +824,10 @@ h2 em { font-style: normal; font-family: 'Outfit', -apple-system, BlinkMacSystem
   background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04)); 
   padding: 56px 32px;
   text-align: center;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   backdrop-filter: blur(8px);
 }
-.stat-block:hover { background: linear-gradient(135deg, rgba(27,79,216,0.15), rgba(27,79,216,0.08)); transform: translateY(-4px); box-shadow: 0 12px 28px rgba(27,79,216,0.2); }
+.stat-block:hover { background: linear-gradient(135deg, rgba(27,79,216,0.15), rgba(27,79,216,0.08)); transform: translateY(-6px); box-shadow: 0 14px 36px rgba(27,79,216,0.25); }
 .stat-big { font-size: 2.6rem; font-weight: 900; line-height: 1; margin-bottom: 12px; font-family: 'Outfit', sans-serif; letter-spacing: -1px; min-height: 3.2rem; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1B4FD8, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .stat-block:nth-child(1) .stat-big { background: linear-gradient(135deg, #1B4FD8, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .stat-block:nth-child(2) .stat-big { background: linear-gradient(135deg, #D97706, #FBBF24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -876,10 +879,10 @@ footer {
 .footer-col a {
   display: block; color: rgba(255,255,255,0.55);
   text-decoration: none; font-size: 0.84rem;
-  margin-bottom: 10px; transition: all 0.25s;
+  margin-bottom: 10px; transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   font-weight: 450; cursor: pointer;
 }
-.footer-col a:hover { color: rgba(255,255,255,0.9); }
+.footer-col a:hover { color: rgba(255,255,255,0.9); transform: translateX(2px); }
 
 /* Footer Link Popup */
 .footer-popup {
@@ -918,10 +921,10 @@ footer {
   margin-top: 24px; padding: 12px 24px;
   background: #1B4FD8; color: white;
   border: none; border-radius: 8px; font-weight: 600;
-  cursor: pointer; transition: all 0.3s;
+  cursor: pointer; transition: all 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
   align-self: flex-start;
 }
-.footer-popup-btn:hover { background: #1B4FD8; transform: translateY(-2px); box-shadow: 0 8px 16px rgba(27,79,216,0.3); }
+.footer-popup-btn:hover { background: #2563EB; transform: translateY(-3px); box-shadow: 0 10px 24px rgba(27,79,216,0.35); }
 @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 .footer-bottom {
@@ -948,7 +951,7 @@ footer {
   display: none; align-items: center; justify-content: center;
   padding: 20px;
   backdrop-filter: blur(8px);
-  animation: fadeInOverlay 0.25s ease-out;
+  animation: fadeInOverlay 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .modal-overlay.open { display: flex; }
 @keyframes fadeInOverlay { from { opacity: 0; } to { opacity: 1; } }
@@ -959,7 +962,7 @@ footer {
   width: 100%; max-width: 380px;
   position: relative;
   box-shadow: 0 24px 96px rgba(27,79,216,0.2), 0 0 1px rgba(0,0,0,0.1);
-  animation: slideUpSmooth 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: slideUpSmooth 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   border: 1.5px solid rgba(27,79,216,0.1);
 }
 @keyframes slideUpSmooth { 
@@ -973,13 +976,14 @@ footer {
   border: 1.5px solid rgba(226,232,240,0.8);
   cursor: pointer; font-size: 1.2rem;
   display: flex; align-items: center; justify-content: center;
-  color: #64748b; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #64748b; transition: all 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .modal-close:hover { 
   background: #1B4FD8; 
   color: white; 
   border-color: #1B4FD8;
-  transform: rotate(90deg);
+  transform: rotate(90deg) scale(1.08);
+  box-shadow: 0 8px 24px rgba(27,79,216,0.3);
 }
 .modal-title { 
   font-size: 1.35rem; font-weight: 900; color: #0a0a0a; 
@@ -1002,9 +1006,15 @@ footer {
   border-radius: 8px; font-family: 'Inter', sans-serif;
   font-size: 0.85rem; color: #1f2937;
   background: white;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   outline: none;
   font-weight: 500;
+}
+.form-field input:focus, .form-field select:focus { 
+  border-color: #1B4FD8;
+  box-shadow: 0 0 0 8px rgba(27,79,216,0.12);
+  background: #f0f4ff;
+  transform: scale(1.01);
 }
 .form-field input::placeholder, .form-field select::placeholder {
   color: #a0aec0;
@@ -1012,8 +1022,9 @@ footer {
 }
 .form-field input:focus, .form-field select:focus { 
   border-color: #1B4FD8;
-  box-shadow: 0 0 0 5px rgba(27,79,216,0.12);
+  box-shadow: 0 0 0 8px rgba(27,79,216,0.12);
   background: #f0f4ff;
+  transform: scale(1.01);
 }
 .form-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .modal-submit {
@@ -1023,14 +1034,14 @@ footer {
   border: none; border-radius: 10px;
   font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 0.9rem;
   cursor: pointer; margin-top: 8px;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow: 0 8px 24px rgba(27,79,216,0.3);
   letter-spacing: -0.2px;
 }
 .modal-submit:hover { 
   background: linear-gradient(135deg, #2563EB 0%, #1B4FD8 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 36px rgba(27,79,216,0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(27,79,216,0.45);
 }
 .modal-submit:active {
   transform: translateY(-1px);
