@@ -1,0 +1,11 @@
+{
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "framework": "vite",
+  "nodeVersion": "18.x",
+  "env": {
+    "EMAIL_USER": "@edunexus_EMAIL_USER",
+    "EMAIL_PASSWORD": "@edunexus_EMAIL_PASSWORD",
+    "ADMIN_EMAIL": "@edunexus_ADMIN_EMAIL"
+  }
+}
