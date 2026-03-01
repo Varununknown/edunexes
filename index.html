@@ -1077,9 +1077,10 @@ footer {
   .stats-row { grid-template-columns: repeat(2,1fr); }
 }
 @media (max-width: 768px) {
-  nav { padding: 0 20px; }
+  nav { padding: 0 16px; height: 56px; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
+  .nav-cta { display: none; }
   .hero { padding: 100px 20px 60px; }
   .section { padding: 40px 20px; }
   .features-grid { grid-template-columns: 1fr; }
@@ -1092,6 +1093,14 @@ footer {
   .trust-logos { gap: 30px; }
   .free-banner-actions { flex-direction: column; width: 100%; }
   .free-banner-actions a { text-align: center; }
+}
+
+@media (max-width: 600px) {
+  nav { padding: 0 12px; }
+  .nav-logo { font-size: 1.1rem; gap: 6px; }
+  .nav-logo .logo-main { font-size: 1.1rem; }
+  .nav-logo .logo-sub { font-size: 0.45rem; }
+  .btn-outline, .btn-primary { font-size: 0.75rem; padding: 8px 16px; }
 }
 </style>
 </head>
